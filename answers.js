@@ -174,11 +174,13 @@ console.log(sumOfNumbersArray([3,2,5,12,4,18]));
 // the function should return [3,4,5]. Test your function on different inputs.
 // Hint: you should look up array methods indexOf and slice.
 function uniqueElementsOnly(arr1, arr2) {
-  var arr3 = arr1.filter(function(ele) { return arr2.indexOf(ele) == -1; });
-  var arr4 = arr2.filter(function(ele) { return arr1.indexOf(ele) == -1; });
+  var arr3 = arr1.filter(function(ele) { return arr2.indexOf(ele) < 0; });
+  var arr4 = arr2.filter(function(ele) { return arr1.indexOf(ele) < 0; });
   return arr3.concat(arr4);
 }
-console.log(uniqueElementsOnly([3, 'dogs', 8, 0, 22, 44], [8, 'dogs', 'cats', 3, 11, 22]));
+var firstArray = [3, 'dogs', 8, 0, 22, 44]
+var secondArray = [8, 'dogs', 'cats', 3, 11, 22]
+console.log(uniqueElementsOnly(firstArray, secondArray));
 
 
 
